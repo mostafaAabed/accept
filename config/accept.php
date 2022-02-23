@@ -1,0 +1,108 @@
+<?php
+    return [
+        'paymob_key' => env('APP_ENV') == 'local' ? env('STAGING_PAYMOB_API_KEY') : env('PAYMOB_API_KEY'),
+
+        'iframes' => env('PAYMOB_IFRAME'),
+
+        'auth_url' => 'https://accept.paymob.com/api/auth/tokens',
+        'order_registration_url' => 'https://accept.paymob.com/api/ecommerce/orders',
+        'pay_request_url' => 'https://accept.paymob.com/api/acceptance/payment_keys',
+        'pay_with_token_url' => 'https://accept.paymobsolutions.com/api/acceptance/payments/pay',
+        'iframe_url' => 'https://accept.paymob.com/api/acceptance/iframes/++IFRAME_ID++?payment_token=++PAYMENT_TOKEN++',
+        'kiosk_url' => 'https://accept.paymob.com/api/acceptance/payments/pay',
+        'wallet_url' => 'https://accept.paymob.com/api/acceptance/payments/pay',
+        'void_url' => 'https://accept.paymob.com/api/acceptance/void_refund/void',
+        'payout' => [
+            'auth' => env('APP_ENV') == 'local' ? 'https://stagingpayouts.paymobsolutions.com/api/secure/o/token/' : 'https://payouts.paymobsolutions.com/api/secure/o/token/',
+            'budget' => env('APP_ENV') == 'local' ? 'https://stagingpayouts.paymobsolutions.com/api/secure/budget/inquire/' : 'https://payouts.paymobsolutions.com/api/secure/budget/inquire/',
+            'payout' => env('APP_ENV') == 'local' ? 'https://stagingpayouts.paymobsolutions.com/api/secure/disburse/' : 'https://payouts.paymobsolutions.com/api/secure/disburse/',
+            'client_id' => env('APP_ENV') == 'local' ? env('STAGING_ACCEPT_PAYOUT_CLIENT_ID') : env('ACCEPT_PAYOUT_CLIENT_ID'),
+            'client_secret' => env('APP_ENV') == 'local' ? env('STAGING_ACCEPT_PAYOUT_CLIENT_SECRET') : env('ACCEPT_PAYOUT_CLIENT_SECRET'),
+            'username' => env('APP_ENV') == 'local' ? env('STAGING_ACCEPT_PAYOUT_USERNAME') : env('ACCEPT_PAYOUT_USERNAME'),
+            'password' => env('APP_ENV') == 'local' ? env('STAGING_ACCEPT_PAYOUT_PASSWORD') : env('ACCEPT_PAYOUT_PASSWORD'),
+        ],
+
+        'hmac_keys' => [
+            'amount_cents',
+            'created_at',
+            'currency',
+            'error_occured',
+            'has_parent_transaction',
+            'id',
+            'integration_id',
+            'is_3d_secure',
+            'is_auth',
+            'is_capture',
+            'is_refunded',
+            'is_standalone_payment',
+            'is_voided',
+            'order',
+            'owner',
+            'pending',
+            'source_data_pan',
+            'source_data_sub_type',
+            'source_data_type',
+            'success',
+        ],  
+
+        'bank_codes' => [
+            'AUB' => 'Ahli United Bank',
+            'CITI' => 'Citi Bank N.A. Egypt',
+            'MIDB' => 'MIDBANK',
+            'BDC' => 'Banque Du Caire',
+            'HSBC' => 'HSBC Bank Egypt S.A.E',
+            'CAE' => 'Credit Agricole Egypt S.A.E',
+            'EGB' => 'Egyptian Gulf Bank',
+            'UB' => 'The United Bank',
+            'QNB' => 'Qatar National Bank Alahli',
+            'BBE' => 'Central Bank Of Egypt',
+            'ARAB' => 'Arab Bank PLC',
+            'ENBD' => 'Emirates National Bank of Dubai',
+            'ABK' => 'Al Ahli Bank of Kuwait – Egypt',
+            'NBK' => 'National Bank of Kuwait – Egypt',
+            'ABC' => 'Arab Banking Corporation - Egypt S.A.E',
+            'FAB' => 'First Abu Dhabi Bank',
+            'ADIB' => 'Abu Dhabi Islamic Bank – Egypt',
+            'CIB' => 'Commercial International Bank - Egypt S.A.E',
+            'HDB' => 'Housing And Development Bank',
+            'MISR' => 'Banque Misr',
+            'AAIB' => 'Arab African International Bank',
+            'EALB' => 'Egyptian Arab Land Bank',
+            'EDBE' => 'Export Development Bank of Egypt',
+            'FAIB' => 'Faisal Islamic Bank of Egypt',
+            'BLOM' => 'Blom Bank',
+            'ADCB' => 'Abu Dhabi Commercial Bank – Egypt',
+            'BOA' => 'Alex Bank Egypt',
+            'SAIB' => 'Societe Arabe Internationale De Banque',
+            'NBE' => 'National Bank of Egypt',
+            'ABRK' => 'Al Baraka Bank Egypt B.S.C.',
+            'POST' => 'Egypt Post',
+            'NSB' => 'Nasser Social Bank',
+            'IDB' => 'Industrial Development Bank',
+            'SCB' => 'Suez Canal Bank',
+            'MASH' => 'Mashreq Bank',
+            'AIB' => 'Arab Investment Bank',
+            'AUDI' => 'Audi Bank',
+            'GASC' => 'General Authority For Supply Commodities',
+            'EGPA' => 'National Bank of Egypt - EGPA',
+            'ARIB' => 'Arab International Bank',
+            'PDAC' => 'Agricultural Bank of Egypt',
+            'NBG' => 'National Bank of Greece',
+            'CBE' => 'Central Bank Of Egypt',
+        ],
+
+        'payout_fee_percentage' => [
+            'bank_card' => 0.1,
+            'wallet' => 2,
+        ],
+        'payout_fee_boundaries_for_bank_card' => [
+            'min' => 30, // L.E
+            'max' => 250, // L.E
+        ],
+
+        'accept_payin_fixed_fee' => 3, // L.E for each payin transaction
+
+        'payout_log_email' => env('PAYOUT_LOG_EMAIL'),
+    
+    ];
+?>

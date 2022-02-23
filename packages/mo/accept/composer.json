@@ -1,0 +1,19 @@
+{
+    "name": "mo/accept",
+    "description": "Integrating accept payment",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mo\\Accept\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mostafa",
+            "email": "mostafa.aabed3@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
